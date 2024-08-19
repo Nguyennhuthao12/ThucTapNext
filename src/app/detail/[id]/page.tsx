@@ -11,15 +11,14 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 const ProductDetail = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
   const { data, error } = useSWR(
-    `https://api-pro.teklearner.com/product/v1/get-list-product`,
+    `https://api-pro.teklearner.com/product/v1/get-product-detail?id=${params.id}`,
     fetcher
   );
 
   if (error) return <p>Có lỗi xảy ra khi tải dữ liệu.</p>;
   if (!data) return <p>Đang tải...</p>;
-
-  // Lọc sản phẩm theo ID từ params
-  const product = data.data.find((item: any) => item.id === params.id);
+  
+  const product = data.data;
 
   if (!product) {
     return <p>Không tìm thấy dữ liệu sản phẩm.</p>;
