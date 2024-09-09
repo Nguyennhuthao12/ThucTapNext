@@ -17,8 +17,6 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
   if (error) return <p>Có lỗi xảy ra khi tải dữ liệu.</p>;
   if (!data) return <p>Đang tải...</p>;
-
-  // Lọc sản phẩm theo ID từ params
   const product = data.data;
 
   if (!product) {
