@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
         <footer className="bg-light py-5">
             <div className="container">

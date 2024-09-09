@@ -6,8 +6,10 @@ import Banner from "./components/Banner";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home() {
+    
   return (
     <>
+    
         <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel">
             <Banner/>
         </div>
