@@ -6,7 +6,7 @@ import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Hàm fetch dữ liệu
-const fetcher = (url: string) => fetch(url).then(res => res.json());
+const fetcher = (url: string) => fetch(url).then(res => res.json());    
 
 const ProductDetail = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
@@ -17,7 +17,6 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
   if (error) return <p>Có lỗi xảy ra khi tải dữ liệu.</p>;
   if (!data) return <p>Đang tải...</p>;
-  
   const product = data.data;
 
   if (!product) {
